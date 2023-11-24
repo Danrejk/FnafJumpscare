@@ -27,8 +27,9 @@ namespace fnafJumpscarePanel
             fnafHandler.TimersChanged += UpdateTextBox;
 
             string[] pickFMlist = fnafHandler.jumpscareList;
-            pickFMlist[0] = "RANDOM";
-            pickFnafMonster.DataSource = pickFMlist;
+            pickFnafMonster.Items.AddRange(pickFMlist);
+            pickFnafMonster.Items[0] = "RANDOM";
+            pickFnafMonster.SelectedIndex = 0;
             pickFnafMonster.DropDownStyle = ComboBoxStyle.DropDownList;
 
             jumpscareTimerList();
@@ -46,7 +47,7 @@ namespace fnafJumpscarePanel
 
         private void jumpscareMe_Click(object sender, EventArgs e)
         {
-            fnafHandler.Animation(-1, 5);
+            fnafHandler.Animation(pickFnafMonster.SelectedIndex, 5);
             Console.WriteLine(pickFnafMonster.SelectedIndex.ToString());//wez te wartosci do handler.cs i ich uzyj
         }
 

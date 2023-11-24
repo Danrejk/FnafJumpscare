@@ -79,10 +79,10 @@ namespace fnafJumpscare
         }
 
         bool jumpscareInProgress;
-        public async void Animation(int jsNum = -1, int waitTime = -1) // use negative values to get a randomly generated ones
+        public async void Animation(int jsNum = 0, int waitTime = 0) // use negative values to get a randomly generated ones
         {
-            if (jsNum < 0) jsNum = new Random(Guid.NewGuid().GetHashCode()).Next(1, jumpscareList.Length);
-            if (waitTime < 0) waitTime = new Random(Guid.NewGuid().GetHashCode()).Next((int)(Properties.Settings.Default.timerMin * 60), (int)(Properties.Settings.Default.timerMax * 60));
+            if (jsNum <= 0) jsNum = new Random(Guid.NewGuid().GetHashCode()).Next(1, jumpscareList.Length);
+            if (waitTime <= 0) waitTime = new Random(Guid.NewGuid().GetHashCode()).Next((int)(Properties.Settings.Default.timerMin * 60), (int)(Properties.Settings.Default.timerMax * 60));
             timers.Add(waitTime);
             TimersChanged?.Invoke(timers);
             await CountTimer(waitTime);
@@ -118,7 +118,7 @@ namespace fnafJumpscare
             jssound.Play();
             for (int i = 0; i < animlist.Count; i++)
             {
-                resourceName = jumpscareList[jsNum]+i;
+                resourceName = jumpscareList[jsNum] + i;
                 resource = resourceManager.GetObject(resourceName);
 
                 if (resource is Bitmap frame)
@@ -137,9 +137,9 @@ namespace fnafJumpscare
 
             for (int j = 0; j < 10; j++)
             {
-                for (int i = 0; i < staticlist.Count; i++)
+                for (int i = 1; i < staticlist.Count; i++)
                 {
-                    resourceName = jumpscareList[0] + i;
+                    resourceName = "static" + i;
                     resource = resourceManager.GetObject(resourceName);
                     if (resource is Bitmap frame)
                     {
@@ -147,6 +147,7 @@ namespace fnafJumpscare
                     }
                 }
             }
+            await Task.Delay(300);
             stsound.Stop();
             currentJumpscare.Close();  
             this.Close();
