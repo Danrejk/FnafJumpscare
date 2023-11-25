@@ -51,7 +51,7 @@ namespace fnafJumpscarePanel
 
         private void jumpscareMe_Click(object sender, EventArgs e)
         {
-            fnafHandler.Animation(pickFnafMonster.SelectedIndex, 5);
+            fnafHandler.Animation(pickFnafMonster.SelectedIndex, 5, keepAfterFail.Checked);
             Console.WriteLine(pickFnafMonster.SelectedIndex.ToString());
         }
 

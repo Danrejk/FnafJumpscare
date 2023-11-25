@@ -43,9 +43,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.autoRepeat = new System.Windows.Forms.CheckBox();
             this.oldWithJumpscare = new System.Windows.Forms.CheckBox();
+            this.keepAfterFail = new System.Windows.Forms.CheckBox();
             this.handlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.handlerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.keepAfterFail = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxTimeOldMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minTimeOldMan)).BeginInit();
@@ -182,6 +182,18 @@
             this.oldWithJumpscare.Text = "With Jumpscare";
             this.oldWithJumpscare.UseVisualStyleBackColor = true;
             // 
+            // keepAfterFail
+            // 
+            this.keepAfterFail.AutoSize = true;
+            this.keepAfterFail.Checked = true;
+            this.keepAfterFail.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.keepAfterFail.Location = new System.Drawing.Point(150, 232);
+            this.keepAfterFail.Name = "keepAfterFail";
+            this.keepAfterFail.Size = new System.Drawing.Size(158, 17);
+            this.keepAfterFail.TabIndex = 15;
+            this.keepAfterFail.Text = "Keep going after Jumpscare";
+            this.keepAfterFail.UseVisualStyleBackColor = true;
+            // 
             // handlerBindingSource
             // 
             this.handlerBindingSource.DataSource = typeof(fnafJumpscare.handler);
@@ -189,16 +201,6 @@
             // handlerBindingSource1
             // 
             this.handlerBindingSource1.DataSource = typeof(fnafJumpscare.handler);
-            // 
-            // keepAfterFail
-            // 
-            this.keepAfterFail.AutoSize = true;
-            this.keepAfterFail.Location = new System.Drawing.Point(251, 377);
-            this.keepAfterFail.Name = "keepAfterFail";
-            this.keepAfterFail.Size = new System.Drawing.Size(123, 17);
-            this.keepAfterFail.TabIndex = 15;
-            this.keepAfterFail.Text = "Keep going after Fail";
-            this.keepAfterFail.UseVisualStyleBackColor = true;
             // 
             // panel
             // 

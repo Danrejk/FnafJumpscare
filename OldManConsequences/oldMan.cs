@@ -154,10 +154,9 @@ namespace OldManConsequences
             }
 
             this.Close();
-            //Application.Exit();
 
             handler fnafHandler = new handler();
-            fnafHandler.Animation(-1, 0);
+            fnafHandler.Animation(-1, 0, keepAfterFail);
         }
     }
 }
