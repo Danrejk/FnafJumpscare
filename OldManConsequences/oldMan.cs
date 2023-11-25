@@ -40,6 +40,7 @@ namespace OldManConsequences
             //thread.Start();
         }
 
+        bool ongoing = true;
         public async void Ruszanie(bool goesRight)
         {
             //i basicly copied same code twice with difference beeing incrementation/decramentation and image (could be more efficient)
@@ -59,12 +60,14 @@ namespace OldManConsequences
                             new SoundPlayer(Properties.Resources.fish4).PlaySync();
                             click = false;
                             this.Close();
+                            ongoing = false;
 
                         }
                         else
                         {
                             playerMissed();
                             click = false;
+                            ongoing = false;
                         }
                     }
                     timer++;
@@ -73,9 +76,10 @@ namespace OldManConsequences
                         click = true;
                         playerMissed();
                         click = false;
+                        ongoing = false;
                     }
                 }
-                if (timer < timeLimit)
+                if (timer < timeLimit && ongoing == true)
                 {
                     Ruszanie(false);
                 }
@@ -95,24 +99,27 @@ namespace OldManConsequences
                             new SoundPlayer(Properties.Resources.fish4).PlaySync();
                             click = false;
                             this.Close();
+                            ongoing = false;
 
                         }
                         else
                         {
                             playerMissed();
                             click = false;
+                            ongoing = false;
                         }
                     }
                     timer++;
 
                     if (timer >= timeLimit)
                     {
-                        //click = true;
+                        click = true;
                         playerMissed();
                         click = false;
+                        ongoing = false;
                     }
                 }
-                if (timer < timeLimit)
+                if (timer < timeLimit && ongoing == true)
                 {
                     Ruszanie(true);
                 }
