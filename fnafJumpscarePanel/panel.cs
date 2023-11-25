@@ -9,15 +9,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using fnafJumpscare;
+using OldManConsequences;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace fnafJumpscarePanel
 {    
     public partial class panel : Form
     {
-
         private handler fnafHandler;
         List<int> jumpscareList = new List<int>();
+
+        private handlerOldMan oldManHandler;
 
         public panel()
         {
@@ -25,6 +27,8 @@ namespace fnafJumpscarePanel
 
             fnafHandler = new handler();
             fnafHandler.TimersChanged += UpdateTextBox;
+
+            oldManHandler = new handlerOldMan();
 
             string[] pickFMlist = fnafHandler.jumpscareList;
             pickFnafMonster.Items.AddRange(pickFMlist);
@@ -48,7 +52,7 @@ namespace fnafJumpscarePanel
         private void jumpscareMe_Click(object sender, EventArgs e)
         {
             fnafHandler.Animation(pickFnafMonster.SelectedIndex, 5);
-            Console.WriteLine(pickFnafMonster.SelectedIndex.ToString());//wez te wartosci do handler.cs i ich uzyj
+            Console.WriteLine(pickFnafMonster.SelectedIndex.ToString());
         }
 
         private async void jumpscareTimerList()
@@ -74,16 +78,6 @@ namespace fnafJumpscarePanel
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -92,6 +86,11 @@ namespace fnafJumpscarePanel
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void spawnOldMan_Click(object sender, EventArgs e)
+        {
+            oldManHandler.SpawnOldMan((int)minTimeOldMan.Value, (int)maxTimeOldMan.Value, autoRepeat.Checked);
         }
     }
 }
