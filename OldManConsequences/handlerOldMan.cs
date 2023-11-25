@@ -36,7 +36,7 @@ namespace OldManConsequences
             this.Visible = false;
         }
 
-        public async void SpawnOldMan(int minTime, int maxTime, bool repeat)
+        public async void SpawnOldMan(int minTime, int maxTime, bool repeat, bool keepGoing)
         {
             do
                 {
@@ -45,7 +45,7 @@ namespace OldManConsequences
                     TimersChanged?.Invoke(timers);
                     await CountTimer(waitTime);
 
-                    new Gimp();
+                    new Gimp(keepGoing);
                 }while (repeat);
         }
 

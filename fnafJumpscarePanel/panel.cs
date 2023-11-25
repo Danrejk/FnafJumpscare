@@ -90,7 +90,7 @@ namespace fnafJumpscarePanel
 
         private void spawnOldMan_Click(object sender, EventArgs e)
         {
-            oldManHandler.SpawnOldMan((int)minTimeOldMan.Value, (int)maxTimeOldMan.Value, autoRepeat.Checked);
+            oldManHandler.SpawnOldMan((int)minTimeOldMan.Value, (int)maxTimeOldMan.Value, autoRepeat.Checked, keepAfterFail.Checked);
         }
     }
 }

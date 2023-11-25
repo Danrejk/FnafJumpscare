@@ -33,8 +33,6 @@
             this.jumpscareMe = new System.Windows.Forms.Button();
             this.timerText = new System.Windows.Forms.Label();
             this.pickFnafMonster = new System.Windows.Forms.ComboBox();
-            this.handlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.handlerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -45,11 +43,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.autoRepeat = new System.Windows.Forms.CheckBox();
             this.oldWithJumpscare = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource1)).BeginInit();
+            this.handlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.handlerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.keepAfterFail = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxTimeOldMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minTimeOldMan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // jumpscareMe
@@ -79,14 +80,6 @@
             this.pickFnafMonster.Size = new System.Drawing.Size(121, 21);
             this.pickFnafMonster.TabIndex = 3;
             // 
-            // handlerBindingSource
-            // 
-            this.handlerBindingSource.DataSource = typeof(fnafJumpscare.handler);
-            // 
-            // handlerBindingSource1
-            // 
-            this.handlerBindingSource1.DataSource = typeof(fnafJumpscare.handler);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,9 +103,19 @@
             // 
             this.numericUpDown1.Enabled = false;
             this.numericUpDown1.Location = new System.Drawing.Point(141, 105);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // spawnOldMan
@@ -160,7 +163,7 @@
             // autoRepeat
             // 
             this.autoRepeat.AutoSize = true;
-            this.autoRepeat.Location = new System.Drawing.Point(251, 360);
+            this.autoRepeat.Location = new System.Drawing.Point(251, 331);
             this.autoRepeat.Name = "autoRepeat";
             this.autoRepeat.Size = new System.Drawing.Size(86, 17);
             this.autoRepeat.TabIndex = 13;
@@ -172,18 +175,37 @@
             this.oldWithJumpscare.AutoSize = true;
             this.oldWithJumpscare.Checked = true;
             this.oldWithJumpscare.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.oldWithJumpscare.Location = new System.Drawing.Point(251, 383);
+            this.oldWithJumpscare.Location = new System.Drawing.Point(251, 354);
             this.oldWithJumpscare.Name = "oldWithJumpscare";
             this.oldWithJumpscare.Size = new System.Drawing.Size(102, 17);
             this.oldWithJumpscare.TabIndex = 14;
             this.oldWithJumpscare.Text = "With Jumpscare";
             this.oldWithJumpscare.UseVisualStyleBackColor = true;
             // 
+            // handlerBindingSource
+            // 
+            this.handlerBindingSource.DataSource = typeof(fnafJumpscare.handler);
+            // 
+            // handlerBindingSource1
+            // 
+            this.handlerBindingSource1.DataSource = typeof(fnafJumpscare.handler);
+            // 
+            // keepAfterFail
+            // 
+            this.keepAfterFail.AutoSize = true;
+            this.keepAfterFail.Location = new System.Drawing.Point(251, 377);
+            this.keepAfterFail.Name = "keepAfterFail";
+            this.keepAfterFail.Size = new System.Drawing.Size(123, 17);
+            this.keepAfterFail.TabIndex = 15;
+            this.keepAfterFail.Text = "Keep going after Fail";
+            this.keepAfterFail.UseVisualStyleBackColor = true;
+            // 
             // panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 450);
+            this.Controls.Add(this.keepAfterFail);
             this.Controls.Add(this.oldWithJumpscare);
             this.Controls.Add(this.autoRepeat);
             this.Controls.Add(this.label4);
@@ -200,11 +222,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "panel";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxTimeOldMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minTimeOldMan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +249,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox autoRepeat;
         private System.Windows.Forms.CheckBox oldWithJumpscare;
+        private System.Windows.Forms.CheckBox keepAfterFail;
     }
 }
 

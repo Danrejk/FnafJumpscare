@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Threading;
+using fnafJumpscare;
 
 namespace OldManConsequences
 {
@@ -21,7 +22,8 @@ namespace OldManConsequences
         //DO NOT MODIFY variables needed for correct work of program 
         bool click = false;
         int timer = 0;
-        public Gimp()
+        bool keepAfterFail = false;
+        public Gimp(bool keepAfterFail)
         {
             InitializeComponent();
             this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
@@ -150,8 +152,12 @@ namespace OldManConsequences
             {
                 new SoundPlayer(Properties.Resources.fish3).PlaySync();
             }
+
             this.Close();
-            //insert function that will activate after player loosing
+            //Application.Exit();
+
+            handler fnafHandler = new handler();
+            fnafHandler.Animation(-1, 0);
         }
     }
 }

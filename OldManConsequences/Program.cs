@@ -21,7 +21,7 @@ namespace OldManConsequences
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Gimp());
+            Application.Run(new Gimp(false));
         }
     }
 }
