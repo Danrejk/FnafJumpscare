@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Threading;
+using fnafJumpscare;
 
-namespace OldMan
+namespace OldManConsequences
 {
     public partial class Gimp : Form
     {
@@ -21,21 +22,27 @@ namespace OldMan
         //DO NOT MODIFY variables needed for correct work of program 
         bool click = false;
         int timer = 0;
-        public Gimp()
+        bool keepAfterFail = false;
+        public Gimp(bool keepAfterFail)
         {
             InitializeComponent();
             this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
+            this.Show();
+            Ruszanie(true);
+            var thread = new Thread(LoopClick) { };
+            thread.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            Ruszanie(true);
+            //Ruszanie(true);
             //thread cos SoundPlayer.PlayLoop does not have delay
-            var thread = new Thread(LoopClick) { };
-            thread.Start();
+            //var thread = new Thread(LoopClick) { };
+            //thread.Start();
         }
 
+        bool ongoing = true;
         public async void Ruszanie(bool goesRight)
         {
             //i basicly copied same code twice with difference beeing incrementation/decramentation and image (could be more efficient)
@@ -54,25 +61,30 @@ namespace OldMan
                         {
                             new SoundPlayer(Properties.Resources.fish4).PlaySync();
                             click = false;
-                            Application.Exit();
+                            this.Close();
+                            ongoing = false;
 
                         }
                         else
                         {
                             playerMissed();
                             click = false;
+                            ongoing = false;
                         }
                     }
                     timer++;
-
+                    if (timer >= timeLimit)
+                    {
+                        click = true;
+                        playerMissed();
+                        click = false;
+                        ongoing = false;
+                    }
                 }
-                if (timer > timeLimit)
+                if (timer < timeLimit && ongoing == true)
                 {
-                    click = true;
-                    playerMissed();
-                    click = false;
+                    Ruszanie(false);
                 }
-                Ruszanie(false);
             }
             else
             {
@@ -88,24 +100,31 @@ namespace OldMan
                         {
                             new SoundPlayer(Properties.Resources.fish4).PlaySync();
                             click = false;
-                            Application.Exit();
+                            this.Close();
+                            ongoing = false;
 
                         }
                         else
                         {
                             playerMissed();
                             click = false;
+                            ongoing = false;
                         }
                     }
                     timer++;
+
+                    if (timer >= timeLimit)
+                    {
+                        click = true;
+                        playerMissed();
+                        click = false;
+                        ongoing = false;
+                    }
                 }
-                if (timer > timeLimit)
+                if (timer < timeLimit && ongoing == true)
                 {
-                    click = true;
-                    playerMissed();
-                    click = false;
+                    Ruszanie(true);
                 }
-                Ruszanie(true);
             }
 
         }
@@ -133,8 +152,11 @@ namespace OldMan
             {
                 new SoundPlayer(Properties.Resources.fish3).PlaySync();
             }
-            Application.Exit();
-            //insert function that will activate after player loosing
+
+            this.Close();
+
+            handler fnafHandler = new handler();
+            fnafHandler.Animation(-1, 0, keepAfterFail);
         }
     }
 }

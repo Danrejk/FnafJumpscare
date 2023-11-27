@@ -3,11 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnafJumpscare", "sampleLayered\fnafJumpscare.csproj", "{E1CABECD-26BC-4269-8E6F-7B338F80087C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fnafPanel", "fnafPanel\fnafPanel.csproj", "{12A228AB-6A5D-4BB1-A20A-02BE8860111C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3} = {3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}
+		{BCD93A64-BD54-453F-96EC-D110915015C8} = {BCD93A64-BD54-453F-96EC-D110915015C8}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnafJumpscarePanel", "fnafJumpscarePanel\fnafJumpscarePanel.csproj", "{658982C7-6F4E-4BAB-84BE-96960A99E9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jumpscare", "jumpscare\jumpscare.csproj", "{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldManConsequences", "OldManConsequences\OldManConsequences.csproj", "{C94CFC42-DFC2-4DF0-B049-BA68C82E0489}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "oldMan", "oldMan\oldMan.csproj", "{BCD93A64-BD54-453F-96EC-D110915015C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3} = {3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +22,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1CABECD-26BC-4269-8E6F-7B338F80087C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1CABECD-26BC-4269-8E6F-7B338F80087C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1CABECD-26BC-4269-8E6F-7B338F80087C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1CABECD-26BC-4269-8E6F-7B338F80087C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{658982C7-6F4E-4BAB-84BE-96960A99E9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{658982C7-6F4E-4BAB-84BE-96960A99E9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{658982C7-6F4E-4BAB-84BE-96960A99E9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{658982C7-6F4E-4BAB-84BE-96960A99E9D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C94CFC42-DFC2-4DF0-B049-BA68C82E0489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C94CFC42-DFC2-4DF0-B049-BA68C82E0489}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C94CFC42-DFC2-4DF0-B049-BA68C82E0489}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C94CFC42-DFC2-4DF0-B049-BA68C82E0489}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A228AB-6A5D-4BB1-A20A-02BE8860111C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A228AB-6A5D-4BB1-A20A-02BE8860111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A228AB-6A5D-4BB1-A20A-02BE8860111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A228AB-6A5D-4BB1-A20A-02BE8860111C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC45EC6-3B99-43EE-86F2-33D5509DA9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD93A64-BD54-453F-96EC-D110915015C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD93A64-BD54-453F-96EC-D110915015C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD93A64-BD54-453F-96EC-D110915015C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD93A64-BD54-453F-96EC-D110915015C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

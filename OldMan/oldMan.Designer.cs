@@ -1,5 +1,5 @@
 ﻿
-namespace OldMan
+namespace OldManConsequences
 {
     partial class Gimp
     {

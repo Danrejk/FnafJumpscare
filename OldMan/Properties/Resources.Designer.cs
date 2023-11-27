@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OldMan.Properties {
+namespace OldManConsequences.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OldMan.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OldMan.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("oldMan.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -65,7 +65,7 @@ namespace OldMan.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _164 {
             get {
-                object obj = ResourceManager.GetObject("164", resourceCulture);
+                object obj = ResourceManager.GetObject("_164", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,7 +75,7 @@ namespace OldMan.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap _167 {
             get {
-                object obj = ResourceManager.GetObject("167", resourceCulture);
+                object obj = ResourceManager.GetObject("_167", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

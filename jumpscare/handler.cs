@@ -113,7 +113,7 @@ namespace fnafJumpscare
 
             // play jumpscare animation
             if (resource is Bitmap iniframe) { currentJumpscare = new jumpscare(iniframe); }
-            await Task.Delay(200);
+            await Task.Delay(0);
 
             jssound.Play();
             for (int i = 0; i < animlist.Count; i++)
