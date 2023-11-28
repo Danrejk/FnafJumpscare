@@ -152,7 +152,7 @@ namespace fnafJumpscare
             currentJumpscare.Close();  
             this.Close();
             jumpscareInProgress = false;
-            if (!keepGoing) { Application.Exit(); }
+            if (keepGoing == false) { Application.Exit(); }
         }
 
         // SORTING FUNCTIONS

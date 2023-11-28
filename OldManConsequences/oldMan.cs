@@ -23,7 +23,7 @@ namespace OldManConsequences
         bool click = false;
         int timer = 0;
         bool keepAfterFail = false;
-        public Gimp(bool keepAfterFail)
+        public Gimp(bool keep)
         {
             InitializeComponent();
             this.KeyPress += new KeyPressEventHandler(Form1_KeyPress);
@@ -31,6 +31,7 @@ namespace OldManConsequences
             Ruszanie(true);
             var thread = new Thread(LoopClick) { };
             thread.Start();
+            keepAfterFail = keep;
         }
 
         private void Form1_Load(object sender, EventArgs e)
