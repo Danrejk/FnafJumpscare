@@ -35,7 +35,7 @@
             this.pickFnafMonster = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.jumpscareDelay = new System.Windows.Forms.NumericUpDown();
             this.spawnOldMan = new System.Windows.Forms.Button();
             this.maxTimeOldMan = new System.Windows.Forms.NumericUpDown();
             this.minTimeOldMan = new System.Windows.Forms.NumericUpDown();
@@ -46,7 +46,7 @@
             this.keepAfterFail = new System.Windows.Forms.CheckBox();
             this.handlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.handlerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpscareDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxTimeOldMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minTimeOldMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).BeginInit();
@@ -99,24 +99,23 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Delay in Seconds:";
             // 
-            // numericUpDown1
+            // jumpscareDelay
             // 
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(141, 105);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.jumpscareDelay.Location = new System.Drawing.Point(141, 105);
+            this.jumpscareDelay.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 6;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.jumpscareDelay.Name = "jumpscareDelay";
+            this.jumpscareDelay.Size = new System.Drawing.Size(120, 20);
+            this.jumpscareDelay.TabIndex = 6;
+            this.jumpscareDelay.Value = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.jumpscareDelay.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // spawnOldMan
             // 
@@ -215,7 +214,7 @@
             this.Controls.Add(this.minTimeOldMan);
             this.Controls.Add(this.maxTimeOldMan);
             this.Controls.Add(this.spawnOldMan);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.jumpscareDelay);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pickFnafMonster);
@@ -224,7 +223,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "panel";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpscareDelay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxTimeOldMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minTimeOldMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.handlerBindingSource)).EndInit();
@@ -243,7 +242,7 @@
         private System.Windows.Forms.BindingSource handlerBindingSource1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown jumpscareDelay;
         private System.Windows.Forms.Button spawnOldMan;
         private System.Windows.Forms.NumericUpDown maxTimeOldMan;
         private System.Windows.Forms.NumericUpDown minTimeOldMan;
