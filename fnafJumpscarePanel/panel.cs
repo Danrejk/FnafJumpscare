@@ -51,7 +51,16 @@ namespace fnafJumpscarePanel
 
         private void jumpscareMe_Click(object sender, EventArgs e)
         {
-            fnafHandler.Animation(pickFnafMonster.SelectedIndex, (int)jumpscareDelay.Value, keepAfterFail.Checked);
+            int delay;
+            if((int)jumpscareDelayMax.Value > 0)
+            {
+                delay = new Random().Next((int)jumpscareDelay.Value, (int)jumpscareDelayMax.Value));
+            }
+            else
+            {
+                delay = (int)jumpscareDelay.Value;
+            }
+            fnafHandler.Animation(pickFnafMonster.SelectedIndex, delay, keepAfterFail.Checked);
             Console.WriteLine(pickFnafMonster.SelectedIndex.ToString());
         }
 
@@ -91,6 +100,18 @@ namespace fnafJumpscarePanel
         private void spawnOldMan_Click(object sender, EventArgs e)
         {
             oldManHandler.SpawnOldMan((int)minTimeOldMan.Value, (int)maxTimeOldMan.Value, autoRepeat.Checked, keepAfterFail.Checked);
+        }
+
+        private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
+        {
+            if(jumpscareDelayMax.Value > 0)
+            {
+                labelDelayJumpscare.Text = "Delay Min [s]:";
+            }
+            else
+            {
+                labelDelayJumpscare.Text = "Delay [s]:";
+            }
         }
     }
 }

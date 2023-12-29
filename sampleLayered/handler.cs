@@ -82,7 +82,6 @@ namespace fnafJumpscare
         public async void Animation(int jsNum = 0, int waitTime = 0, bool keepGoing = false) // use negative values to get a randomly generated ones
         {
             if (jsNum <= 0) jsNum = new Random(Guid.NewGuid().GetHashCode()).Next(1, jumpscareList.Length);
-            if (waitTime < 0) waitTime = new Random(Guid.NewGuid().GetHashCode()).Next((int)(Properties.Settings.Default.timerMin * 60), (int)(Properties.Settings.Default.timerMax * 60));
             timers.Add(waitTime);
             TimersChanged?.Invoke(timers);
             await CountTimer(waitTime);
